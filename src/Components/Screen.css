@@ -1,0 +1,14 @@
+#screen {
+	height:70%;
+	width:100%;
+	
+}
+
+#screen > h1 {
+	text-align:center;
+	position:relative;
+	top:50%;
+	transform:translate(0,-50%);
+	font-size:2rem;
+}
+
