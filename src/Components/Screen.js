@@ -6,16 +6,23 @@ class Screen extends React.Component {
 		super(props)
 		this.state = {
 			text:"Pay attention !",
-			currentBackgroundColor: 'white'
+			currentBackgroundColor: null
 		}
 	}
 
 	render() {
+		console.log(this.props.colors)
 		return (
 			<div id = 'screen' style ={{backgroundColor: this.state.currentBackgroundColor}}>
 				{this.props.lost ? <h1> You lost :( </h1> : <h1> {this.state.text} </h1>}
 			</div>
 		)
+	}
+
+	componentDidUpdate(prevProps) {
+		if(prevProps.colors.length != this.props.colors.length && this.state.currentBackgroundColor === undefined){
+			this.showColors()
+		}
 	}
 
 	playTimer = () => {

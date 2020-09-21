@@ -40,11 +40,19 @@ class Game extends React.Component {
 		if(this.state.colors[this.state.index] !== color) {
 			this.setState({lost:true})
 		}
-		this.setState(prevState => {
-			return (
-				{index: prevState.index + 1}
-			)
-		})
+
+		else if(this.state.index == this.state.colors.length - 1) {
+			this.setState({index:0})
+			this.addColor()
+		}
+		else {
+			this.setState(prevState => {
+				return (
+					{index: prevState.index + 1}
+				)
+			})
+		}
+		
 	}
 }
 
