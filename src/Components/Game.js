@@ -15,6 +15,8 @@ class Game extends React.Component {
 			correctSound:new Audio('/corect.mp3'),
 			wrongSound: new Audio('/gresit.mp3')
 		}
+		this.state.correctSound.volume = props.volume ? 1 : 0
+		this.state.wrongSound.volume = props.volume ? 0.3 : 0
 	}
 
 	render() {

@@ -5,7 +5,7 @@ div#menu {
 	overflow:hidden;
 }
 
-div#menu > button {
+div#menu > button#startButton {
 
 	position:relative;
 	top:-50%;
@@ -21,7 +21,7 @@ div#menu > button {
 	transition: 300ms all linear;
 }
 
-div#menu > button:hover {
+div#menu > button#startButton:hover {
 	color:white;
 	background-color:#5BC4ED;
 	cursor:pointer;
@@ -32,5 +32,14 @@ div#menu > img#mind {
 	position:relative;
 	height:100%;
 	z-index:-1;
-	opacity:0.5;
+	
 }
+
+div#menu > i.fa {
+	position:fixed;
+	top:10px;
+	right:20px;
+	font-size:4rem;
+	cursor:pointer;
+}
+

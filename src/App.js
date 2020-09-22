@@ -6,13 +6,16 @@ class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      inGame : false
+      inGame : false,
+      menuRef: React.createRef()
     }
   }
 
   render() {
+
     return (
-      this.state.inGame ? <Game/> : <Menu startGame = {this.startGame}/>
+      
+      this.state.inGame ? <Game volume = {this.state.menuRef.current.state.volume}/> : <Menu ref = {this.state.menuRef} startGame = {this.startGame}/>
     )
   }
 
