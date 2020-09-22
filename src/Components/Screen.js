@@ -11,7 +11,7 @@ class Screen extends React.Component {
 	}
 
 	render() {
-		console.log(this.props.colors)
+		
 		return (
 			<div id = 'screen' style ={{backgroundColor: this.state.currentBackgroundColor}}>
 				{this.props.lost ? <h1> You lost :( </h1> : <h1> {this.state.text} </h1>}

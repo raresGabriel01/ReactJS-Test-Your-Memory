@@ -17,4 +17,9 @@
 	width:100px;
 	border-radius:50%;
 	height:100px;
+	cursor:pointer;
+}
+
+#panel > div.button:hover {
+	box-shadow:0 0 15px 15px grey;
 }

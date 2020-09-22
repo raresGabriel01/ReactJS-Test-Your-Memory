@@ -5,7 +5,7 @@ class Panel extends React.Component {
 	constructor(props){
 		super(props)
 		this.state = {
-
+			
 		}
 	}
 
@@ -20,6 +20,7 @@ class Panel extends React.Component {
 	}
 
 	handleClick = (event) => {
+		
 		let color = event.target.style.backgroundColor
 		this.props.handleClick(color)
 	}

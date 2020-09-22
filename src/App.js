@@ -1,18 +1,23 @@
 import React from 'react';
 import './App.css';
 import Game from './Components/Game.js'
+import Menu from './Components/Menu.js'
 class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      inGame : true
+      inGame : false
     }
   }
 
   render() {
     return (
-      this.state.inGame ? <Game/> : <div> {this.state.inGame.toString()} </div>
+      this.state.inGame ? <Game/> : <Menu startGame = {this.startGame}/>
     )
+  }
+
+  startGame = () => {
+    this.setState({inGame:true})
   }
 }
 
