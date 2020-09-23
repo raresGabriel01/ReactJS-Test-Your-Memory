@@ -1,4 +1,9 @@
+A simple game that will test your short term and visual memory
+All you have to do is to keep track of the color sequence and reproduce it by pressing the corresponding buttons
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
 
 ## Available Scripts
 
