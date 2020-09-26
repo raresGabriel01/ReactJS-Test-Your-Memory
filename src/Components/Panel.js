@@ -10,11 +10,11 @@ class Panel extends React.Component {
 	}
 
 	render() {
+		let colors = this.props.buttonColors
+		colors = colors.map(color => <div className = 'button' style ={{backgroundColor:color}} key = {color} onClick ={ this.handleClick}></div>)
 		return (
 			<div id = 'panel'>
-				<div className = 'button' style ={{backgroundColor:'red'}} onClick = {this.handleClick}> </div>
-				<div className = 'button' style ={{backgroundColor:'blue'}} onClick = {this.handleClick}> </div>
-				<div className = 'button' style ={{backgroundColor:'green'}} onClick = {this.handleClick}> </div>
+				{colors}
 			</div>
 		)
 	}

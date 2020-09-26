@@ -17,6 +17,15 @@ class Game extends React.Component {
 		}
 		this.state.correctSound.volume = props.volume ? 1 : 0
 		this.state.wrongSound.volume = props.volume ? 0.3 : 0
+
+		let dict = {
+			'easy': ['red', 'blue', 'green'],
+			'normal':['red', 'blue', 'green', 'orange'],
+			'hard':['red','blue','green','orange','purple']
+		}
+
+		this.state.randomColors = dict[props.difficulty]
+		
 	}
 
 	render() {
@@ -24,7 +33,7 @@ class Game extends React.Component {
 			<div className = 'cover'>
 				<ScoreCounter score = {this.state.score}/>
 				<Screen lost = {this.state.lost} colors = {this.state.colors} addColor = {this.addColor} ref = {this.state.screenRef}/>
-				<Panel handleClick = {this.handleButtonClick}/>
+				<Panel handleClick = {this.handleButtonClick} buttonColors = {this.state.randomColors}/>
 			</div>
 		)
 	}
@@ -38,8 +47,8 @@ class Game extends React.Component {
 	}
 
 	randomColor = () => {
-		let randomColors = ['red', 'green', 'blue']
-		return randomColors[Math.floor(Math.random()*3)]
+		
+		return this.state.randomColors[Math.floor(Math.random()*this.state.randomColors.length)]
 	}
 
 	handleButtonClick = (color) => {

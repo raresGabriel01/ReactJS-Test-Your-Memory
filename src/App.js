@@ -7,7 +7,8 @@ class App extends React.Component {
     super()
     this.state = {
       inGame : false,
-      menuRef: React.createRef()
+      menuRef: React.createRef(),
+      difficulty:null
     }
   }
 
@@ -15,12 +16,18 @@ class App extends React.Component {
 
     return (
       
-      this.state.inGame ? <Game volume = {this.state.menuRef.current.state.volume}/> : <Menu ref = {this.state.menuRef} startGame = {this.startGame}/>
+      this.state.inGame ? <Game volume = {this.state.menuRef.current.state.volume} difficulty = {this.state.difficulty}/> : 
+                          <Menu ref = {this.state.menuRef} startGame = {this.startGame}/>
     )
   }
 
   startGame = () => {
-    this.setState({inGame:true})
+    console.log(this.state.menuRef.current.state.chosenDifficulty)
+    this.setState(prevState => {
+      return(
+        {inGame:true, difficulty:prevState.menuRef.current.state.chosenDifficulty}
+      )
+    })
   }
 }
 

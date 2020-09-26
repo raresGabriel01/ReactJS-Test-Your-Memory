@@ -43,3 +43,40 @@ div#menu > i.fa {
 	cursor:pointer;
 }
 
+
+
+div#menu > div#difficultyWrap {
+	position:fixed;
+	bottom:0;
+	right:0;
+}
+
+div#menu > div#difficultyWrap > button.difficulty {
+	padding:14px 16px;
+	margin:3px;
+	background-color:white;
+	border-radius:12px;
+	outline:none;
+	cursor:pointer;
+	transition: 300ms all linear;
+}
+
+div#menu > div#difficultyWrap > button.easy {
+	color:#2dd641;
+	border:2px solid #2dd641;
+}
+
+
+
+div#menu > div#difficultyWrap > button.normal {
+	color:yellow;
+	border:2px solid yellow;
+}
+
+
+
+div#menu > div#difficultyWrap > button.hard {
+	color:red;
+	border:2px solid red;
+}
+
