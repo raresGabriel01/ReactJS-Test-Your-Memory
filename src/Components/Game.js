@@ -6,6 +6,11 @@ import ScoreCounter from './ScoreCounter.js'
 class Game extends React.Component {
 	constructor(props){
 		super(props)
+		let dict = {
+			'easy': ['red', 'blue', 'green'],
+			'normal':['red', 'blue', 'green', 'orange'],
+			'hard':['red','blue','green','orange','purple']
+		}
 		this.state = {
 			score:0,
 			colors: [],
@@ -13,19 +18,12 @@ class Game extends React.Component {
 			index:0,
 			lost:false,
 			correctSound:new Audio('/corect.mp3'),
-			wrongSound: new Audio('/gresit.mp3')
+			wrongSound: new Audio('/gresit.mp3'),
+			randomColors:dict[props.difficulty]
 		}
 		this.state.correctSound.volume = props.volume ? 1 : 0
 		this.state.wrongSound.volume = props.volume ? 0.3 : 0
 
-		let dict = {
-			'easy': ['red', 'blue', 'green'],
-			'normal':['red', 'blue', 'green', 'orange'],
-			'hard':['red','blue','green','orange','purple']
-		}
-
-		this.state.randomColors = dict[props.difficulty]
-		
 	}
 
 	render() {

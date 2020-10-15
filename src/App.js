@@ -22,7 +22,6 @@ class App extends React.Component {
   }
 
   startGame = () => {
-    console.log(this.state.menuRef.current.state.chosenDifficulty)
     this.setState(prevState => {
       return(
         {inGame:true, difficulty:prevState.menuRef.current.state.chosenDifficulty}
